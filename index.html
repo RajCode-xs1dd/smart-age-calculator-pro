@@ -9,9 +9,8 @@
   <title>Smart Age Calculator – Calculate Your Exact Age & Life Stats</title>
 
   <meta name="description"
-    content="Smart Age Calculator — instantly calculate your exact age, time left until next birthday, and life stats in days, weeks, hours, and more. No sign-up needed. Built with JavaScript by RajCode.">
-  <meta name="keywords"
-    content="age calculator, birthday calculator, online age tool, smart age calculator, life stats calculator, rajcode">
+    content="Calculate your exact age in years, months, and days, see your next birthday countdown, and discover how many weeks, days, hours, and minutes you have lived.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="RajCode-xs1dd">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
@@ -19,8 +18,11 @@
   <meta property="og:description"
     content="Calculate your exact age, time until next birthday, and total life summary in seconds!">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://smart-age-calculator-pro.netlify.app">
+  <meta property="og:url" content="https://smart-age-calculator-pro.netlify.app/">
+  <meta property="og:site_name" content="Smart Age Calculator">
+  <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://smart-age-calculator-pro.netlify.app/preview.png">
+  <meta property="og:image:alt" content="Smart Age Calculator showing age and birthday results">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,6 +30,7 @@
   <meta name="twitter:description"
     content="Calculate your exact age, time until next birthday, and total life summary in seconds!">
   <meta name="twitter:image" content="https://smart-age-calculator-pro.netlify.app/preview.png">
+  <meta name="twitter:image:alt" content="Smart Age Calculator showing age and birthday results">
 
   <!-- Mobile Web App -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -42,7 +45,31 @@
   <link rel="icon" href="./favicon.ico">
   <link rel="manifest" href="./site.webmanifest">
 
-  <link rel="canonical" href="https://smart-age-calculator-pro.netlify.app">
+  <link rel="canonical" href="https://smart-age-calculator-pro.netlify.app/">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Smart Age Calculator",
+      "url": "https://smart-age-calculator-pro.netlify.app/",
+      "description": "Calculate your exact age, next birthday countdown, and total time lived.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "image": "https://smart-age-calculator-pro.netlify.app/preview.png",
+      "author": {
+        "@type": "Person",
+        "name": "RajCode-xs1dd",
+        "url": "https://rajcode.netlify.app/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -241,12 +268,12 @@
 
 <body>
   <button class="dark-toggle" onclick="toggleDark()" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-  <div class="container">
-    <h1>Age & Birthday Calculator</h1>
+  <main class="container">
+    <h1>Smart Age Calculator</h1>
 
     <div class="hero">
-      <h2>🧠 Discover Your Life Stats Instantly</h2>
-      <p>Exact age • Next birthday countdown • Weeks, days, hours, seconds lived</p>
+      <h2>Exact Age and Birthday Calculator</h2>
+      <p>Find your exact age, next birthday countdown, and total time lived.</p>
     </div>
 
     <label for="year">Year of Birth</label>
@@ -268,20 +295,20 @@
 
     <div class="output" id="ageCard">
       <div class="output-title">🎉 You Are…</div>
-      <div id="ageOutput">Your age will appear here.</div>
+      <div id="ageOutput" aria-live="polite">Your age will appear here.</div>
     </div>
 
     <div class="output" id="birthdayCard">
       <div class="output-title">🎂 Next Birthday Countdown</div>
-      <div id="birthdayOutput">Next birthday details will appear here.</div>
+      <div id="birthdayOutput" aria-live="polite">Next birthday details will appear here.</div>
     </div>
 
     <div class="output" id="summaryCard">
       <div class="output-title">⌛ Time You’ve Lived</div>
-      <div id="summaryOutput">Summary will appear here.</div>
+      <div id="summaryOutput" aria-live="polite">Summary will appear here.</div>
       <div id="funFact"></div>
     </div>
-  </div>
+  </main>
 
   <footer>
     <div class="footer-credit">

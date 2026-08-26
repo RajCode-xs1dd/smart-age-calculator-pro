@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smart-age-calculator-pro.netlify.app/sitemap.xml
