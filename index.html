@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Smart Age Calculator – Calculate Your Exact Age & Life Stats</title>
@@ -13,9 +13,6 @@
   <meta name="keywords"
     content="age calculator, birthday calculator, online age tool, smart age calculator, life stats calculator, rajcode">
   <meta name="author" content="RajCode-xs1dd">
-
-  <!-- Theme Color (Mobile browser UI) -->
-  <meta name="theme-color" content="#f8fbff">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:title" content="Smart Age Calculator – Calculate Your Exact Age">
@@ -163,19 +160,28 @@
     }
 
     .output {
+      display: none;
       background: var(--card);
       padding: 20px;
       margin-top: 22px;
       border-radius: 18px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      opacity: 0;
-      transform: translateY(15px);
-      transition: all .5s ease;
     }
 
     .output.show {
-      opacity: 1;
-      transform: translateY(0);
+      display: block;
+      animation: outputReveal .5s ease both;
+    }
+
+    @keyframes outputReveal {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .output-title {
@@ -193,13 +199,26 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin: 24px auto 0;
+      width: min(640px, 100%);
       padding: 15px;
       text-align: center;
       background: linear-gradient(135deg, var(--accent), #4e9eff);
       color: #fff;
       border-radius: 12px;
     }
+
+    .footer-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--gold-light);
+}
 
     footer .icons a {
       color: #fff;
@@ -221,7 +240,7 @@
 </head>
 
 <body>
-  <button class="dark-toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+  <button class="dark-toggle" onclick="toggleDark()" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
   <div class="container">
     <h1>Age & Birthday Calculator</h1>
 
@@ -245,7 +264,7 @@
       <option value="">--Select Day--</option>
     </select>
 
-    <button class="calc" onclick="calculate()">Calculate</button>
+    <button type="button" class="calc" onclick="calculate()">Calculate</button>
 
     <div class="output" id="ageCard">
       <div class="output-title">🎉 You Are…</div>
@@ -265,13 +284,15 @@
   </div>
 
   <footer>
-    <div>✨ Built with ❤ by <strong>RajCode-xs1dd</strong></div>
+    <div class="footer-credit">
+   ✨ Built with ❤ by <a href="https://rajcode.netlify.app/" target="_blank" rel="noopener noreferrer">RajCode</a>
+  </div>
     <div class="icons">
-      <a href="https://github.com/rajcode2006" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.instagram.com/rajcode_xs1dd?igsh=cDVnMDZxdmNtdHI4" target="_blank"><i
+      <a href="https://github.com/rajcode-xs1dd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/rajcode_official?igsh=cDVnMDZxdmNtdHI4" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i
           class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/rajesh-patra-0b0913381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-        target="_blank"><i class="fab fa-linkedin"></i></a>
+        target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </div>
     <div class="version">Version 2.0</div>
   </footer>
